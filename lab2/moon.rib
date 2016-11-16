@@ -3,7 +3,7 @@
 FrameBegin 1
  
 Display "moon.tif" "file" "rgba"
-Format 800 600 -1
+Format 640 400 -1
 ShadingRate 1
 Projection "perspective" "fov" [30]
 Identity
