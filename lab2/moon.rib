@@ -1,0 +1,37 @@
+##RenderMan RIB-Structure 1.0
+ 
+FrameBegin 1
+ 
+Display "moon.tif" "file" "rgba"
+Format 800 600 -1
+ShadingRate 1
+Projection "perspective" "fov" [30]
+Identity
+
+# Default distant headlight
+LightSource "distantlight" 1 "from" [2 2 -1] "to" [1 0 1]
+
+# Camera transformation
+Translate 0 0 5
+
+WorldBegin
+
+Identity
+
+AttributeBegin
+ 
+  Color [0.8 0.8 0.8] # Neutral gray
+  # Displacement bounds, important for correct rendering
+  Attribute "displacementbound" "float sphere" [0.2] "coordinatesystem" ["shader"]
+  Displacement "moon_displacement"
+  Surface "moon_surface"
+  TransformBegin
+    Rotate 90 1 0 0   # Make +z point "up", the default camera coordinte system has +y up,
+    Sphere 1 -1 1 360 # but this Sphere primitive has its poles on the z axis.
+  TransformEnd
+ 
+AttributeEnd
+ 
+WorldEnd
+ 
+FrameEnd
