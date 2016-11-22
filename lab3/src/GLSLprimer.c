@@ -62,10 +62,10 @@
 #endif
 
 // File names for a mesh model, a texture file and the two shaders
-#define TEXTUREFILENAME PATH "./textures/earth2048.tga"
-#define MESHFILENAME PATH "./meshes/trex.obj"
-#define VERTEXSHADERFILENAME PATH "./shaders/vertexshader.glsl"
-#define FRAGMENTSHADERFILENAME PATH "./shaders/fragmentshader.glsl"
+#define TEXTUREFILENAME PATH "/textures/earth2048.tga"
+#define MESHFILENAME PATH "/meshes/trex.obj"
+#define VERTEXSHADERFILENAME PATH "/shaders/vertexshader.glsl"
+#define FRAGMENTSHADERFILENAME PATH "/shaders/fragmentshader.glsl"
 
 /*
  * setupViewport() - set up the OpenGL viewport to handle window resizing
