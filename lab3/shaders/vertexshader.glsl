@@ -430,8 +430,8 @@ float pnoise(vec4 P, vec4 rep)
 }
 
 void main(){
-  vec3 biggerBlob = 0.2 * Normal * snoise(vec4(15 * Position, time/10));
-  vec3 smallerBlob = 0.05 * Normal * snoise(vec4(Position, 2*(time) ));
+  vec3 biggerBlob = 0.8 * Normal * snoise(vec4(0.55 * Position, time));
+  vec3 smallerBlob = 0.2 * Normal * snoise(vec4(5.9*Position, 2*(time) ));
   vec3 pos = Position + biggerBlob + smallerBlob;
   blobHeight = length(biggerBlob + smallerBlob);
   gl_Position = (P * MV) * vec4(pos, 2.0);
