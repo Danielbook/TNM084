@@ -178,7 +178,7 @@ int main(int argc, char *argv[]) {
 
 	// Create geometry for rendering
 	soupInit(&myShape); // Initialize all fields to zero
-	soupCreateSphere(&myShape, 1.0, 50); // A latitude-longitude sphere mesh
+	soupCreateSphere(&myShape, 1.0, 250); // A latitude-longitude sphere mesh
 	//soupReadOBJ(&myShape, MESHFILENAME); // A triangle mesh from an OBJ file
 	soupPrintInfo(myShape);
 

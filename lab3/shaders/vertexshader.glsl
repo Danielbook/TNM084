@@ -139,7 +139,9 @@ float snoise(vec4 v)
   m1 = m1 * m1;
   return 49.0 * ( dot(m0*m0, vec3( dot( p0, x0 ), dot( p1, x1 ), dot( p2, x2 )))
                + dot(m1*m1, vec2( dot( p3, x3 ), dot( p4, x4 ) ) ) ) ;
-}//
+}
+
+//
 // GLSL textureless classic 4D noise "cnoise",
 // with an RSL-style periodic variant "pnoise".
 // Author:  Stefan Gustavson (stefan.gustavson@liu.se)
@@ -428,11 +430,11 @@ float pnoise(vec4 P, vec4 rep)
 }
 
 void main(){
-  vec3 biggerBlob = 0.5 * Normal * snoise(vec4(1.5 * Position, time));
-  vec3 smallerBlob = 0.03 * Normal * snoise(vec4(25.0*Position, cnoise(vec4(0,2,0,1)) * time));
+  vec3 biggerBlob = 0.2 * Normal * snoise(vec4(15 * Position, time/10));
+  vec3 smallerBlob = 0.05 * Normal * snoise(vec4(Position, 2*(time) ));
   vec3 pos = Position + biggerBlob + smallerBlob;
   blobHeight = length(biggerBlob + smallerBlob);
-  gl_Position = (P * MV) * vec4(pos, 1.0);
+  gl_Position = (P * MV) * vec4(pos, 2.0);
   interpolatedNormal = mat3(MV) * Normal;
   st = TexCoord;
   xyz = Position;
