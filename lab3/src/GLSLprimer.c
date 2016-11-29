@@ -203,7 +203,7 @@ int main(int argc, char *argv[]) {
         fps = computeFPS(window);
 
 		// Set the background RGBA color, and clear the buffers for drawing
-        glClearColor(0.3f, 0.3f, 0.3f, 0.0f);
+        glClearColor(0.2f, 0.2f, 0.2f, 0.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         // Set up the viewport
